@@ -19,3 +19,15 @@ cor(data)#gives correlation matrix for data set named "data"
 
 plot(regmod$fitted,regmod$residuals)#plot of residuals vs fitted values
 abline(h=mean(regmod$residuals), col="blue")#adds reference line at mean of residuals: zero!
+
+#083023
+intro <- read.csv("Intro_data.csv", header = T)
+
+reg <- lm(y ~ x, data=intro)
+summary(reg)
+
+reg2 <- lm(y ~ 0 + x, data=intro)
+summary(reg2)
+
+sum(reg$residuals)
+sum(reg2$residuals)
